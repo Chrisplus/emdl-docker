@@ -1,7 +1,10 @@
-FROM tensorflow/tensorflow:2.0.0rc0-gpu-py3-jupyter
+FROM tensorflow/tensorflow:2.0.0-gpu-py3
 
 LABEL maintainer="chrisplus.jiang@gmail.com"
 
+# update
+
+RUN apt update && apt upgrade -y
 
 # install basic packages
 RUN pip install -U pip setuptools \
