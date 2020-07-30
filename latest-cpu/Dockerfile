@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-py3
+FROM tensorflow/tensorflow:latest
 
 MAINTAINER Shiqi Jiang "chrisplus.jiang@gmail.com"
 
@@ -11,7 +11,8 @@ RUN pip install -U pip setuptools \
         h5py \
         scipy \
         scikit-learn \
-        matplotlib
+        matplotlib \
+        opencv-python
 
 
 

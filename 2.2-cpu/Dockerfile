@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-gpu
+FROM tensorflow/tensorflow:2.2.0
 
 LABEL maintainer="chrisplus.jiang@gmail.com"
 

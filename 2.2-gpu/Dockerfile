@@ -1,7 +1,10 @@
-FROM tensorflow/tensorflow:latest-gpu
+FROM tensorflow/tensorflow:2.2.0-gpu
 
 LABEL maintainer="chrisplus.jiang@gmail.com"
 
+# update
+
+RUN apt update && apt upgrade -y
 
 # install basic packages
 RUN pip install -U pip setuptools \
