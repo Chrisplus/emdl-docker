@@ -16,12 +16,12 @@ RUN pip install -U pip setuptools \
         scikit-learn \
         matplotlib
 
-RUN mkdir -p /root/Android/Sdk/
+RUN mkdir -p /root/Android/Sdk/cmdline-tools/
 RUN export ANDROID_HOME=/root/Android/Sdk
 
 
 
-RUN cd /root/Android/Sdk \
+RUN cd /root/Android/Sdk/cmdline-tools \
     && wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip \
     && unzip commandlinetools-linux-6609375_latest.zip \
     && rm commandlinetools-linux-6609375_latest.zip \
