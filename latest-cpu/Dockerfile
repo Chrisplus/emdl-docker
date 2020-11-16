@@ -1,6 +1,6 @@
 FROM tensorflow/tensorflow:latest
 
-MAINTAINER Shiqi Jiang "chrisplus.jiang@gmail.com"
+LABEL maintainer="chrisplus.jiang@gmail.com"
 
 # apt update
 RUN apt update && apt upgrade -y
@@ -12,22 +12,9 @@ RUN apt install -y libsm6 libxext6 libxrender-dev libgl1-mesa-glx
 RUN pip install -U pip setuptools \
     && pip --no-cache-dir install \
         numpy \
-        pandas \
-        h5py \
-        scipy \
-        scikit-learn \
-        matplotlib \
-        opencv-python
+        scipy
 
-
-
-# install pytorch
-RUN pip --no-cache-dir install \ 
-    torch \
-    torchvision
-
-# install tensorflow dataset
+# install opencv and coco tools
 RUN pip --no-cache-dir install \
-    tensorflow-datasets \
-    tensorflow-hub \
-    tensorflow-metadata
+    opencv-python \
+    pycocotools
