@@ -6,7 +6,7 @@ LABEL maintainer="chrisplus.jiang@gmail.com"
 RUN apt update && apt upgrade -y
 
 # apt install utils
-RUN apt intall -y wget vim
+RUN apt install -y wget vim
 
 # apt install opencv related
 RUN apt install -y libsm6 libxext6 libxrender-dev libgl1-mesa-glx
