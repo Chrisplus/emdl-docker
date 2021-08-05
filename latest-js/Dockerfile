@@ -18,16 +18,9 @@ RUN pip install -U pip setuptools \
         scipy
 
 # setup node and npm
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh |bash
-
-RUN export NVM_DIR="$HOME/.nvm" \
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-RUN nvm install node
-
-RUN npm install -g yarn
-
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh |bash\
+ENV NVM_DIR="/root/.nvm"
+RUN . "$NVM_DIR/nvm.sh" && nvm install node && npm install -g yarn  
 # install opencv and coco tools
 # RUN pip --no-cache-dir install \
 #     opencv-python \
